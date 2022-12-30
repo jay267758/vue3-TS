@@ -1,7 +1,10 @@
 <template>
   <el-sub-menu v-if="props.item.children && props.item.children.length" :index="props.item.path">
     <template #title>
-      <el-icon><location /></el-icon>
+      <el-icon>
+        <!-- 全局注入icon，通过 component 展示 -->
+        <component :is=" props.item.meta?.icon" />
+      </el-icon>
       <span>{{ props.item.meta?.title }}</span>
     </template>
     <menu-item
@@ -14,7 +17,9 @@
   <el-menu-item v-else-if="!props.item.meta?.hidden" :index="props.item.path">
     <!-- <span>{{ props.item.name }}</span> -->
     <template #title>
-        <el-icon></el-icon>
+        <el-icon>
+          <component :is=" props.item.meta?.icon" />
+        </el-icon>
         <router-link class="menu-a" :to="{name: props.item.name}">
           <span>{{ props.item.meta?.title }}</span>
         </router-link>

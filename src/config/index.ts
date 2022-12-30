@@ -7,20 +7,36 @@ const routes: RouteRecordRaw[] = [
     path: '/',
     name: 'demo',
     component: () => import('@/views/DemoTs/DemoStore.vue'),
-    meta: { title: '首页' },
+    meta: {
+      title: '首页',
+      icon: 'grid'
+    },
   },
   {
     path: '/about',
     name: 'about',
-    meta: { title: '数据' },
+    meta: {
+      title: '数据',
+      icon: 'memo'
+    },
     children: [
       {
         path: '/about/aa',
         name: 'about_aa',
         component: () => import('@/views/Form/DemoForm.vue'),
         meta: {
-          title: '数据A'
+          title: '数据A',
         },
+        children: [
+          {
+            path: '/about/aa/aa',
+            name: 'about_aa_aa',
+            component: () => import('@/views/Form/DemoForm.vue'),
+            meta: {
+              title: '数据A_A'
+            },
+          }
+        ]
       },
       {
         path: '/about/ab',
@@ -33,7 +49,10 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/aboutb',
     name: 'aboutb',
-    meta: { title: '模型' },
+    meta: {
+      title: '模型',
+      icon: 'histogram'
+    },
     children: [
       {
         path: '/about/bb',
@@ -60,7 +79,10 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/pass',
     name: 'pass',
-    meta: { title: '传参' },
+    meta: {
+      title: '传参',
+      icon: 'connection'
+    },
     children: [
       {
         path: '/pass/prop_emit',

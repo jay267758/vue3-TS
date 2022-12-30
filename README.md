@@ -9,6 +9,8 @@ yarn install
 ### Compiles and hot-reloads for development
 ```
 运行本地环境
+npm run serve 
+
 yarn serve
 ```
 
