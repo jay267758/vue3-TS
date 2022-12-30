@@ -2,16 +2,19 @@
 
 ## Project setup
 ```
+下载依赖
 yarn install
 ```
 
 ### Compiles and hot-reloads for development
 ```
+运行本地环境
 yarn serve
 ```
 
 ### Compiles and minifies for production
 ```
+打包项目
 yarn build
 ```
 
