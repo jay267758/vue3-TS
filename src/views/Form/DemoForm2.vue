@@ -1,14 +1,19 @@
 <template>
   <el-button @click="onGet">
-    获取接口
+    获取接口Get
+  </el-button>
+  <el-button @click="onPost">
+    获取接口Post
   </el-button>
   <br>
   <br>
-  <p>{{ num }}</p>
+  <p>get: {{ data.get }}</p>
+  <p>post: {{ data.post }}</p>
+  
 </template>
 
 <script setup lang="ts">
-import demoService from '@/service/demo'
+import nodeService from '@/service/node'
 import {
   ref,
   reactive,
@@ -27,9 +32,8 @@ import {
 const num = ref<string>('')
 
 const data = reactive({
-  data:{
-    name: ''
-  }
+  get: {},
+  post: {}
 });
 
 onBeforeMount(() => { // 组件挂载前
@@ -59,11 +63,25 @@ onUnmounted(() => { // 组件卸载时
 
 
 const onGet = () => {
-  num.value = '100'
-  // demoService.getUsers().then(res => {
-  //   data.data = res;
-  //   console.log(res);
-  // });
+  const value = {
+    name: '李四',
+    type: 'get'
+  }
+  nodeService.getUsers(value).then(res => {
+    data.get = res;
+    console.log(res);
+  });
+}
+
+const onPost = () => {
+  const value = {
+    name: '王五',
+    type: 'post'
+  }
+  nodeService.demo(value).then(res => {
+    data.post = res;
+    console.log(res);
+  });
 }
 
 
