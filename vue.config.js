@@ -16,12 +16,13 @@ module.exports = defineConfig({
     open: false,
     proxy: {
       'api/v1/*': {
-        target: 'https://mock.mengxuegu.com',
+        // target: 'https://mock.mengxuegu.com',
+        target: 'http://127.0.0.1:8080/',
         // target: 'http://localhost:8080',
         changeOrigin: true, // 是否跨域
-        pathRewrite(path) {
-          return `/mock/63993da12e0f396e51a5c723/nba${path}`;
-        }
+        // pathRewrite(path) { // 加前缀
+        //   return `/mock/63993da12e0f396e51a5c723/nba${path}`;
+        // }
       }
     }
   },
