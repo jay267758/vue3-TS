@@ -8,7 +8,7 @@
         <LayoutMenu />
       </el-aside>
       <el-container style="height: 100vh;;overflow:auto;">
-        <el-header style="height: 40px;line-height: 40px;background-color: #ccc;">
+        <el-header class="header">
           <MenuHeader />
         </el-header>
         <MenuContent />
@@ -42,12 +42,18 @@ export default {
       top: 0;
       left: 0;
       width: 200px;
-      height: 40px;
-      line-height: 40px;
+      height: 48px;
+      line-height: 48px;
       text-align: center;
       color: #fff;
       background-color: #001428;
       z-index: 9999;
+    }
+    .header {
+      z-index: 1000;
+      height: 48px;
+      line-height: 48px;
+      box-shadow: 0 6px 10px 0 rgba(0,0,0, 0.06), 0 0 5px 0 rgba(0,0,0,0.6);
     }
   }
 </style>

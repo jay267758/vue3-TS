@@ -2,21 +2,27 @@
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <!-- <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/> -->
   <!-- <IndexTs /> -->
-  <UserLayout />
+  <Login v-if="!tokenState.token"/>
+  <UserLayout v-else />
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { defineComponent } from 'vue';
+import useToken from '@/pinia/token';
 // import HelloWorld from './components/HelloWorld.vue';
 // import IndexTs from './views/DemoTs/DemoStore.vue'
 import UserLayout from './layouts/UserLayout.vue'
+import Login from './views/Login/Index.vue'
 
-export default defineComponent({
+const tokenState = useToken();
+
+defineComponent({
   name: 'App',
   components: {
     // HelloWorld
     // IndexTs
-    UserLayout
+    UserLayout,
+    Login
   }
 });
 </script>
