@@ -43,6 +43,12 @@ const routes: RouteRecordRaw[] = [
         name: 'about_ab',
         component: () => import('@/views/Form/DemoForm2.vue'),
         meta: { title: '生命周期' }
+      },
+      {
+        path: '/about/notification',
+        name: 'notification',
+        component: () => import('@/views/Form/PopUpNotification.vue'),
+        meta: { title: '弹窗' }
       }
     ]
   },
@@ -101,7 +107,16 @@ const routes: RouteRecordRaw[] = [
         }
       }
     ]
-  }
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/Login/Index.vue'),
+    meta: {
+      title: '登录页',
+      hidden: true
+    },
+  },
 ];
 
 export default routes;

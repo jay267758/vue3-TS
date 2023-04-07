@@ -17,7 +17,7 @@ module.exports = defineConfig({
     proxy: {
       'api/v1/*': {
         // target: 'https://mock.mengxuegu.com',
-        target: 'http://127.0.0.1:8080/',
+        target: 'http://127.0.0.1:7001/',
         // target: 'http://localhost:8080',
         changeOrigin: true, // 是否跨域
         // pathRewrite(path) { // 加前缀
